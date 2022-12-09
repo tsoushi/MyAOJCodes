@@ -5,9 +5,10 @@ void printArray(int*, int);
 
 int main(void){
     int length;
+    int array[100];
+
     scanf("%d", &length);
     
-    int array[100];
     for (int i = 0; i < length; i++){
         scanf("%d", &array[i]);
     }
@@ -18,16 +19,16 @@ int main(void){
 
 void insertionSort(int *array, int length){
     for (int i = 1; i < length; i++){
+        int buf = array[i];
+        int j = i - 1;
+
         printArray(array, length);
         
-        int buf = array[i];
-        int ii = i - 1;
-        
-        while (ii >= 0 && array[ii] > buf){
-            array[ii+1] = array[ii];
-            ii--;
+        while (j >= 0 && array[j] > buf){
+            array[j+1] = array[j];
+            j--;
         }
-        array[ii+1] = buf;
+        array[j+1] = buf;
     }
 }
 

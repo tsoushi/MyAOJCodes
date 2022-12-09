@@ -9,12 +9,14 @@ int main(void){
 	int num;
 
 	scanf("%d", &length);
+
 	for (int i = 0; i < length; i++){
 	    scanf("%d", &num);
 	    if (isPrime(num)==1){
 	        primeCount++;
 	    }
 	}
+
 	printf("%d\n", primeCount);
 }
 
